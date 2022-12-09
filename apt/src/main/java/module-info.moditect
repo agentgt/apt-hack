@@ -1,0 +1,9 @@
+module io.jstach.apthack {
+	requires static org.eclipse.jdt.annotation;
+	requires transitive java.compiler;
+	
+	exports io.jstach.apthack;
+	
+	provides javax.annotation.processing.Processor with io.jstach.apthack.AptHackProcessor;
+
+}

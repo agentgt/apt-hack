@@ -1,0 +1,6 @@
+open module io.jstach.apthack.test.test {
+	requires io.jstach.apthack;
+	requires static org.eclipse.jdt.annotation;
+	requires junit;
+	exports io.jstach.apthack.test.test to junit;
+}
