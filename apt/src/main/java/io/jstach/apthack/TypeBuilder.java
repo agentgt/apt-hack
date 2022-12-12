@@ -2,6 +2,16 @@ package io.jstach.apthack;
 
 public class TypeBuilder {
 
-	public StringBuilder buffer = new StringBuilder();
+	private StringBuilder buffer = new StringBuilder();
+
+	public TypeBuilder append(String s) {
+		buffer.append(s);
+		return this;
+	}
+
+	@Override
+	public String toString() {
+		return buffer.toString();
+	}
 
 }

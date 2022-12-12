@@ -26,7 +26,6 @@ public class Methods {
 	@AptHack
 	public void declaredWildCardSuper(
 			@SuppressWarnings("exports") @Nullable List<? super @Nullable CharSequence> list) {
-
 	}
 
 	@AptHack
@@ -36,12 +35,40 @@ public class Methods {
 
 	@AptHack
 	public <T> void typeVariableNullable(List<@Nullable T> stuff) {
-
 	}
 
 	@AptHack
 	public void enclosedType(@Nullable A a) {
+	}
+
+	@AptHack
+	public void array(String @Nullable [] s) {
 
 	}
+
+	@AptHack
+	public void arrayComponent(@Nullable String[] s) {
+
+	}
+
+	@AptHack
+	public void arrayBoth(@Nullable String @Nullable [] s) {
+
+	}
+
+	@AptHack
+	public void arrayNative(@Nullable int @Nullable [] s) {
+
+	}
+
+	@AptHack
+	public <T extends java.lang.@Nullable Comparable<T> & CharSequence> void typeIntersection(T t) {
+
+	}
+
+	// @AptHack
+	// public void someNative(@Nullable int s) {
+	//
+	// }
 
 }

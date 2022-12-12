@@ -47,12 +47,18 @@ public class AptHackProcessor extends AbstractProcessor {
 
 		for (var m : methods) {
 			out.println("Method: " + m);
+			out.println("Method: " + m.asType());
 			for (VariableElement param : m.getParameters()) {
-				out.println("Parameter: " + param);
 				var parameterType = param.asType();
-				String typeString = parameterType.accept(new TypeToStringMirrorVisitor(), new TypeBuilder()).buffer
-						.toString();
-				out.println("\tCode Safe Type: " + typeString);
+				out.println("Parameter: " + param + " type: " + parameterType);
+				String typeString = TypeToStringMirrorVisitor.toCodeSafeString(parameterType);
+				out.println("Code Safe Type: " + typeString);
+				if (typeString.equals(parameterType.toString())) {
+					out.println("[OK] TypeMirror toString matches");
+				}
+				else {
+					out.println("[FAIL] TypeMirror toString does not match.");
+				}
 				typeDeclarations.add(typeString);
 			}
 			out.println();
